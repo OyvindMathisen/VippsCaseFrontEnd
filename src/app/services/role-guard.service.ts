@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { 
+import {
   Router,
   CanActivate,
   ActivatedRouteSnapshot
@@ -18,10 +18,8 @@ export class RoleGuardService implements CanActivate {
     // decode the token to get its payload
     const tokenPayload = decode(token);
     if (
-      !this.auth.isAuthenticated() || 
+      !this.auth.isAuthenticated() ||
       tokenPayload.Role !== expectedRole
-      
-      
     ) {
       this.router.navigate(['purchase']);
       alert('You must log in to see your profile');

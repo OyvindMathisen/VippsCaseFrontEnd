@@ -87,7 +87,7 @@ export class PersonInformationComponent implements OnInit {
       charge.customerDetails = this.personDetails.value;
     } catch (error) {
       // Logging the error for debugging.
-      console.error(error.message);
+      // console.error(error.message);
 
       // The stripe element is missing one or more details.
       // The component will display it's own error.
@@ -101,7 +101,7 @@ export class PersonInformationComponent implements OnInit {
       this.handleServerResponse(response, charge);
     } catch (error) {
       // Logging the error into our console.
-      console.error(error);
+      // console.error(error);
       // Replacing the error from the HttpClient with a human readable message.
       error.message = 'We were unable to contact our server to make the transaction. Please try again later.';
       this.handleErrorResponse(error, 0, charge);
@@ -142,7 +142,7 @@ export class PersonInformationComponent implements OnInit {
   }
 
   initUserDetails(token: string) {
-    console.log(atob(token.split('.')[1]));
+    // console.log(atob(token.split('.')[1]));
     const userInfo: any = JSON.parse(atob(token.split('.')[1]));
 
     // Set values of person-information form
@@ -183,7 +183,7 @@ export class PersonInformationComponent implements OnInit {
     } catch (error) {
       // Debug message to display error.
       // This will most likely be a missing paymentIntent from failing the authentification through 3D secure.
-      console.error(error.message);
+      // console.error(error.message);
     }
 
     if (errorAction) {
@@ -192,7 +192,7 @@ export class PersonInformationComponent implements OnInit {
       try {
         await this.stripeService.chargeFailed(charge);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
       // Update the cart-state.
       this.handleErrorResponse(errorAction, 2, charge);

@@ -65,22 +65,21 @@ export class PurchasePageComponent implements OnInit {
 
   getCart() {
     // Get new cart:
-    let userId = 0;
-    userId = parseInt(localStorage.getItem('user_id'), 10);
-    if (isFinite(parseInt(localStorage.getItem('user_id'), 10))) {
+    let userId = parseInt(localStorage.getItem('user_id'), 10);
 
-      this.cartService.newCart(userId).subscribe((data) => {
-        localStorage.setItem('order_id', data.orderId);
-        this.items = data.items;
-
-        this.total = 0;
-
-        this.items.forEach((item: any) => {
-          this.total += item.price;
-        });
-
-        console.log(this.total);
-      });
+    // Ensure we have a userId, if not we set it to 0 (anonymous)
+    if (isNaN(userId)) {
+      userId = 0;
     }
+
+    // Get a whole new cart and fill out item-list wit hit.
+    this.cartService.newCart(userId).subscribe((data) => {
+      localStorage.setItem('order_id', data.orderId);
+      this.items = data.items;
+      this.total = 0;
+      this.items.forEach((item: any) => {
+        this.total += item.price;
+      });
+    });
   }
 }

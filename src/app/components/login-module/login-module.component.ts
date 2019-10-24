@@ -45,7 +45,7 @@ export class LoginModuleComponent implements OnInit {
   }
 
   loginClicked(email: string, pwd: string, role: any) {
-    console.log('Login method called...');
+    // console.log('Login method called...');
     this.cookieValueUsername = this.cookie.get('username');
     this.cookieValuePassword = this.cookie.get('password');
 
@@ -70,10 +70,10 @@ export class LoginModuleComponent implements OnInit {
         // disable login error message
         this.loginError = false;
 
-        console.log(localStorage.getItem('id_token'));
+        // console.log(localStorage.getItem('id_token'));
       },
       error => {
-        console.log(error);
+        // console.log(error);
         this.loginError = true;
         this.errorMessage = error.statusText + ': Invalid username or password!';
 
@@ -84,7 +84,7 @@ export class LoginModuleComponent implements OnInit {
     return false;
   }
 
-  private setSession(token) {
+  private setSession(token: any) {
     // const expiresAt = moment().add(authResult.expiresIn,'second');
 
     localStorage.setItem('id_token', token);
