@@ -58,6 +58,22 @@ export class PersonInformationComponent implements OnInit {
     const userId = parseInt(localStorage.getItem('user_id'), 10);
     const cartId = parseInt(localStorage.getItem('order_id'), 10);
 
+    // Check for an empty cart
+    if (this.totalCost <= 0) {
+      // Creating our own 'empty cart' error.
+      const error = new Error();
+      error.message = 'Unable to make a purchase with an empty cart. Please add items to your cart.';
+
+      // Creating a charge to store the cartId
+      const tempCharge = {} as StripeCharge;
+      tempCharge.cartId = cartId;
+
+      // Handling the error message.
+      this.handleErrorResponse(error, 0, tempCharge);
+      this.disablePurchaseButton = false;
+      return;
+    }
+
     // NOTE: Multiply the sum with 100, as Stripe calculates from the lowest denominator, which is "øre" in nok.
     const cost = this.totalCost * 100;
 
