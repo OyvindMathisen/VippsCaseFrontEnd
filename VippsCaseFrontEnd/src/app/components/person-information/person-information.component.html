@@ -1,0 +1,142 @@
+<!-- Linking the form group up against our TS file-->
+<form [formGroup]="personDetails">
+  <div class="form-group">
+    <div class="required-fields">
+      <span class="required">* </span>
+      <label>Required Fields</label><br>
+    </div>
+    <!-- Creating the label and input for the form-->
+    <span class="required">* </span>
+    <label for="fullName">Full Name: </label><br>
+    <input name="fullName" formControlName="fullName" type="text" placeholder="Enter Full Name"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Full Name'" required pattern="^[a-zA-ZÆØÅæøå ]*$">
+
+    <!-- Error messages if, for example, the customer didn't fill in all of the values. -->
+    <div *ngIf="getFullName().invalid && (getFullName().dirty || getFullName().touched)">
+      <p *ngIf="getFullName().errors.required">Name is required.</p>
+      <p *ngIf="!getFullName().errors.requiredPattern">Only letters are accepted for name</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="addressLineOne">Address Line 1: </label><br>
+    <input name="addressLineOne" formControlName="addressLineOne" type="text" placeholder="Enter Address"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Address'" required>
+
+    <div *ngIf="getAddressLineOne().invalid && (getAddressLineOne().dirty || getAddressLineOne().touched)">
+      <p *ngIf="getAddressLineOne().errors.required">Address is required.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="addressLineTwo">Address Line 2: </label><br>
+    <input name="addressLineTwo" formControlName="addressLineTwo" type="text"
+      placeholder="(Not Required) Enter Second Address" onfocus="this.placeholder = ''"
+      onblur="this.placeholder = '(Not Required) Enter Second Address'">
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="county">County: </label><br>
+    <input name="county" formControlName="county" type="text" placeholder="Enter County" onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Enter County'" required pattern="^[a-zA-Z ]*$">
+
+    <div *ngIf="getCounty().invalid && (getCounty().dirty || getCounty().touched)">
+      <p *ngIf="getCounty().errors.required">County is required.</p>
+      <p *ngIf="!getCounty().errors.requiredPattern">Only letters are accepted for counties</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="postalCode">Postal Code: </label><br>
+    <input name="postalCode" formControlName="postalCode" type="text" placeholder="Enter Postal Code"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Postal Code'" required pattern="\d{4}">
+
+    <div *ngIf="getPostalCode().invalid && (getPostalCode().dirty || getPostalCode().touched)">
+      <p *ngIf="getPostalCode().errors.required">Postal code is required.</p>
+      <p *ngIf="!getPostalCode().errors.requiredPattern">Postal code requires 4 digits.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="city">City: </label><br>
+    <input name="city" formControlName="city" type="text" placeholder="Enter City" onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Enter City'" required pattern="^[a-zA-Z ]*$">
+
+    <div *ngIf="getCity().invalid && (getCity().dirty || getCity().touched)">
+      <p *ngIf="getCity().errors.required">City is required.</p>
+      <p *ngIf="!getCity().errors.requiredPattern">Only letters are accepted for cities</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="country">Country: </label><br>
+    <input name="country" formControlName="country" type="text" placeholder="Enter Country"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Country'" required pattern="^[a-zA-Z ]*$">
+    <div *ngIf="getCountry().invalid && (getCountry().dirty || getCountry().touched)">
+      <p *ngIf="getCountry().errors.required">Country is required.</p>
+      <p *ngIf="!getCountry().errors.requiredPattern">Only letters are accepted for countries</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="phoneNumber">Phone Number: </label><br>
+    <!-- TODO: Move the phoneNumberCode element in front of phoneNumber, but much smaller in width. -->
+    <input id="phoneNumberCode" type="text" value="+47" disabled>
+    <input id="phoneInput" name="phoneNumber" formControlName="phoneNumber" type="text" placeholder="Enter Phone Number"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone Number'" required
+      pattern="(?:\d{2} ?){4}|\d{3} ?\d{2} ?\d{3}">
+    <div *ngIf="getPhoneNumber().invalid && (getPhoneNumber().dirty || getPhoneNumber().touched)">
+      <p *ngIf="getPhoneNumber().errors.required">Phone number is required.</p>
+      <p *ngIf="!getPhoneNumber().errors.requiredPattern">Phone number requires 8 digits.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="required">* </span>
+    <label for="email">Email: </label><br>
+    <input name="email" formControlName="email" type="email" placeholder="Enter E-mail"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter E-mail'" required email>
+
+    <div *ngIf="getEmail().invalid && (getEmail().dirty || getEmail().touched)">
+      <p *ngIf="getEmail().errors.required">Email is required.</p>
+      <p *ngIf="getEmail().errors.email">Email needs to be formated like: "email@domain.com".</p>
+    </div>
+  </div>
+
+  <div class="paymentDetails">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here.-->
+    </div>
+    <div id="card-errors" #cardErrors role="alert">
+      <!-- Used to display form errors-->
+    </div>
+  </div>
+
+  <br />
+
+  <div class="submit">
+    <!-- Button is disabled until all of the required fields (except stripe) has been filled in. -->
+    <button (click)="onPurchaseClicked()" [disabled]="personDetails.invalid || disablePurchaseButton"
+      class="btn btn-success btn-block" style="width: 360px">
+
+      <div id="loader" *ngIf="disablePurchaseButton; else canMakePurchase">
+        <div id="loader_1" class="loader"></div>
+        <div id="loader_2" class="loader"></div>
+        <div id="loader_3" class="loader"></div>
+      </div>
+
+      <ng-template #canMakePurchase>
+        Purchase
+      </ng-template>
+    </button>
+  </div>
+</form>

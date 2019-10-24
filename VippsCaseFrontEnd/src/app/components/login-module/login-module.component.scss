@@ -1,0 +1,27 @@
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+  }
+
+  .container {
+      width: 400px;
+      min-width: 200px;
+      border: 1px solid black;
+      border-radius: 2%;
+      background-color: lightgray;
+      color: black;
+
+      #loginForm {
+        margin: 30px;
+
+        #anonymous {
+          position: relative;
+          float: right;
+        }
+    }
+  }
+
+  
+

@@ -1,0 +1,63 @@
+[
+    {
+        "order": {
+            "orderId": 4,
+            "total": 0,
+            "createdAt": "2019-10-17T12:28:48.6289819",
+            "active": true,
+            "status": 3,
+            "userId": 6,
+            "user": null
+        },
+        "items": [
+            {
+                "itemId": 4,
+                "name": "Samsung Galaxy Fold",
+                "imageUrl": "https://images.samsung.com/no/smartphones/galaxy-fold/images/galaxy-fold-share.jpg",
+                "price": 20000,
+                "active": true
+            }
+        ]
+    },
+    {
+        "order": {
+            "orderId": 5,
+            "total": 0,
+            "createdAt": "2019-10-17T12:29:28.0507464",
+            "active": true,
+            "status": 3,
+            "userId": 6,
+            "user": null
+        },
+        "items": [
+            {
+                "itemId": 1,
+                "name": "Spoon",
+                "imageUrl": "spoon.jpg",
+                "price": 10,
+                "active": false
+            },
+            {
+                "itemId": 1,
+                "name": "Spoon",
+                "imageUrl": "spoon.jpg",
+                "price": 10,
+                "active": false
+            },
+            {
+                "itemId": 4,
+                "name": "Samsung Galaxy Fold",
+                "imageUrl": "https://images.samsung.com/no/smartphones/galaxy-fold/images/galaxy-fold-share.jpg",
+                "price": 20000,
+                "active": true
+            },
+            {
+                "itemId": 3,
+                "name": "Not a flamethrower",
+                "imageUrl": "https://img.gfx.no/2262/2262785/Flamethrower%20%E2%80%94%20The%20Boring%20Company%20%281%29.png",
+                "price": 6000,
+                "active": true
+            }
+        ]
+    }
+]

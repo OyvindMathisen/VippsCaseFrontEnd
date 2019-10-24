@@ -1,0 +1,8 @@
+<div *ngIf = "items.length < 1">
+    <p>No items in cart</p>
+</div> 
+
+<!-- Import the class here from the .ts file-->
+<div [ngClass]="displayType" *ngFor = "let item of items" class="item">
+    <app-item [item]="item"></app-item>
+</div>

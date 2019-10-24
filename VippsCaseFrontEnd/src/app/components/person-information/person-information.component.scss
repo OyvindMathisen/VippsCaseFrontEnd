@@ -1,0 +1,116 @@
+#phoneNumberCode {
+  width: 2.5em;
+}
+#phoneInput {
+  width: 320px;
+}
+
+.submit {
+  margin-top: 10px;
+}
+
+input {
+  border: none;
+  padding: 5px 5px;
+  border-radius: 3px;
+  width: 360px;
+}
+
+p {
+  color: red;
+  font-size: 13px;
+}
+
+.required-fields {
+  font-size: 12px;
+}
+
+.required {
+  color: red;
+}
+
+/* Stripe Elements */
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+  width: 360px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 1px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+#card-errors {
+  color: #e60e0e;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+/* Stripe Elements End */
+
+/* Loading animation */
+/* Based off: https://icons8.com/cssload/ - fountainG */
+#loader {
+  position: relative;
+  width: 80px;
+  height: 28px;
+  margin: auto;
+}
+
+.loader {
+  position: absolute;
+  top: 6.5px;
+  background-color: #28a745;
+  width: 15px;
+  height: 15px;
+  animation-name: bounce_loader;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  transform: scale(0.3);
+  border-radius: 19px;
+}
+
+#loader_1 {
+  left: 0;
+  animation-delay: 0.5s;
+}
+
+#loader_2 {
+  left: 30px;
+  animation-delay: 0.75s;
+}
+
+#loader_3 {
+  left: 60px;
+  animation-delay: 1s;
+}
+
+@keyframes bounce_loader {
+  0% {
+    transform: scale(1);
+    background-color: #363636;
+  }
+  100% {
+    transform: scale(0.3);
+    background-color: #28a745;
+  }
+}
+
+/* Loading animation end */

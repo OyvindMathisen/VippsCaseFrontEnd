@@ -1,0 +1,19 @@
+<div class="container">
+    <form id="loginForm">
+        <label for="uname"> <b>Username:</b> </label>
+        <input #email type="text" placeholder="Email/Username" name="uname" id="username" [(ngModel)] = "username">
+        
+        <label for="pwd"> <b>Password:</b> </label>
+        <input #pwd type="password" placeholder="Password" name="pwd" id="password" [(ngModel)] = "password">
+        
+        <br/>
+        <!-- TODO: Add authentication functionality to the buttons -->
+        <button id="login" (click)="loginClicked(email.value, pwd.value, 'user')" class="btn btn-dark">Login</button>
+        <button id="anonymous" (click)="loginClicked('', '', 'anonymous')" class="btn btn-dark" type="submit">Proceed as Anonymous</button>
+        <br/>
+        <app-error *ngIf = "loginError" [errorMessage]="this.errorMessage"></app-error>
+        <label for="">
+            <input type="checkbox" id="rememberbox" (change)="onRememberMe($event)" name="check_rememberMe"> Remember me
+        </label>
+    </form>
+</div>

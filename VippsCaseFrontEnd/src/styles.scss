@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-color: #363636;
+    color: whitesmoke;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+

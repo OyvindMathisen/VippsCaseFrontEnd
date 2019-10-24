@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-person-information [card]="card" 
+                              [stripe]="stripe"
+                              [totalCost]="total"
+                              (purchaseConfirmed)="onPurchaseSuccess($event)"
+                              (purchaseFailed)="onPurchaseFailed($event)">
+      </app-person-information>
+
+      <div *ngIf="stripeError != ''"class="stripeBackendError">
+        {{ stripeError }}
+      </div>
+    </div>
+    
+    <div class="col-sm-6 scrollDiv" id="style-2">
+      <button (click)="getCart()">Get new cart</button>
+      <div class="itemBasket">
+        <!-- Specify the displayType class from the item-list.component.scss file here -->
+        <app-item-list [displayType]="'purchaseItems'" [items]="items"></app-item-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

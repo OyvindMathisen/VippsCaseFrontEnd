@@ -1,0 +1,42 @@
+.container {
+    margin-top: 20px;
+
+    #purchaseBtn{
+        font-size: 22px;
+        width: 75%;
+    }
+    
+    #personDetails{
+        input{
+            max-width: 75%;
+        }
+    }
+
+    .scrollDiv {
+        margin-top: 45px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 800px;
+    }
+
+
+    #style-2::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    
+    #style-2::-webkit-scrollbar
+    {
+        margin-left: 10px;
+        width: 12px;
+        background-color: #555;
+    }
+    
+    #style-2::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }}

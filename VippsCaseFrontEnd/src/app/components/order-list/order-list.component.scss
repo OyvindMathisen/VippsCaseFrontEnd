@@ -1,0 +1,29 @@
+#tableLine{
+    border: 2px solid green;
+}
+
+.collapsible {
+    background-color: rgb(128, 128, 128);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+.orders {
+    display: none;
+    overflow: hidden;
+  }
+
+.orders.show {
+    display: block;
+}
